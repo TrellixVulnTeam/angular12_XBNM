@@ -1,0 +1,36 @@
+<p>variables works!</p>
+<pre>
+    a :: {{a}}
+    b :: {{b}}
+
+    <!--
+        one way data binding
+        expression
+        interpolation
+    -->
+    {{fname}}
+    {{age}}
+    {{fruits}}
+    {{fruits[1]}}
+
+    {{user}}
+    {{user | json}}
+    {{user.tech}}
+
+
+    ++{{gender}} <!--// true | empty -->
+    **{{interest}} <!--// null | empty -->
+    ``{{undf}} <!--// undefined | empty -->
+
+    a+b :: {{a+b}}
+    a-b :: {{a-b}}
+    a*b :: {{a*b}}
+    a/b :: {{a/b}}
+    a%b :: {{a%b}}
+
+    2+3 :: {{2+3}}
+    2-3 :: {{2-3}}
+    2*3 :: {{2*3}}
+    2/3 :: {{2/3}}
+    2%3 :: {{2%3}}
+</pre>
