@@ -1,0 +1,64 @@
+<!-- 
+Form states
+valid
+invalid
+dirty
+pristine
+touched
+untouched
+submitted
+
+
+form field states
+valid
+invalid
+dirty
+pristine
+touched
+untouched
+hasError(required)
+hasError(maxlength)
+hasError(minlength)
+hasError(pattern) -->
+
+<p>forms works!</p>
+<pre>
+    <form name="form" #f=ngForm (submit)="f.valid && reg()">
+        <input type="text" name="fname" [(ngModel)]="fname" #firstName=ngModel placeholder="firstName" required minlength="5">
+        <!-- <div class="error" *ngIf="firstName.dirty && firstName.invalid"> First Name is invalid</div> -->
+        <!-- <div class="error" *ngIf="firstName.touched && firstName.invalid"> First Name is invalid</div> -->
+        <!-- <div class="error" *ngIf="f.submitted && firstName.invalid"> First Name is invalid</div> -->
+        <div class="error" *ngIf="firstName.dirty && firstName.hasError('required')"> First Name is mandatory</div>
+        <div class="error" *ngIf="firstName.dirty && firstName.hasError('minlength')"> First Name is requires min 5 characters</div>
+        
+        <input type="text" name="lname" [(ngModel)]="lname" #lastName=ngModel placeholder="lastName" required>
+        
+        <input type="number" name="contact" [(ngModel)]="contact" #phone=ngModel placeholder="Contact Number" maxlength="10" pattern="[6789][0-9]{9}">
+        <div class="error" *ngIf="phone.dirty && phone.hasError('pattern')"> Phone number should contain 10 digits & start with 6|7|8|9</div>
+        
+        <input type="{{passType}}" name="pwd" [(ngModel)]="pwd" #pass=ngModel placeholder="pwd"> <span (click)="togglePass()">{{passLabel}}</span>
+
+        <button>Submit</button>
+
+    </form>
+
+    ##########feild states##########
+    valid :: {{firstName.valid}}
+    invalid :: {{firstName.invalid}}
+    dirty :: {{firstName.dirty}}
+    pristine :: {{firstName.pristine}}
+    touched :: {{firstName.touched}}
+    untouched :: {{firstName.untouched}}
+    required Error :: {{firstName.hasError('required')}}
+    minlength Error:: {{firstName.hasError('minlength')}}
+
+    ##########Form States##########
+    valid :: {{f.valid}}
+    invalid :: {{f.invalid}}
+    dirty :: {{f.dirty}}
+    pristine :: {{f.pristine}}
+    touched :: {{f.touched}}
+    untouched :: {{f.untouched}}
+    submitted:: {{f.submitted}}
+
+</pre>

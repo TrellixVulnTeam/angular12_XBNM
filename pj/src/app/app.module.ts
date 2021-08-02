@@ -13,6 +13,8 @@ import { HexaPipe } from './hexa.pipe';
 import { ParamsPipe, SquarePipe } from './params.pipe';
 import { DebitMaskPipe } from './debit-mask.pipe';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { FormsComponent } from './forms/forms.component';
+import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 /*
 Components -- page / block of a page
 Directives -- block
@@ -32,7 +34,9 @@ Modules -- configuration of all above
     ParamsPipe,
     SquarePipe,
     DebitMaskPipe,
-    LifeCycleComponent
+    LifeCycleComponent,
+    FormsComponent,
+    ObjFormsComponent
   ],
   imports: [ // modules
     BrowserModule,

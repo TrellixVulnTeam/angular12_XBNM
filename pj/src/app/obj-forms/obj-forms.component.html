@@ -1,0 +1,64 @@
+<!-- 
+Form states
+valid
+invalid
+dirty
+pristine
+touched
+untouched
+submitted
+
+
+form field states
+valid
+invalid
+dirty
+pristine
+touched
+untouched
+hasError(required)
+hasError(maxlength)
+hasError(minlength)
+hasError(pattern) -->
+
+<p>obj-forms works!</p>
+<pre>
+    <form name="form" #f=ngForm (submit)="f.valid && reg()">
+        <input type="text" name="fname" [(ngModel)]="user.fname" #fname=ngModel placeholder="fname" required minlength="5">
+        <!-- <div class="error" *ngIf="fname.dirty && fname.invalid"> First Name is invalid</div> -->
+        <!-- <div class="error" *ngIf="fname.touched && fname.invalid"> First Name is invalid</div> -->
+        <!-- <div class="error" *ngIf="f.submitted && fname.invalid"> First Name is invalid</div> -->
+        <div class="error" *ngIf="fname.dirty && fname.hasError('required')"> First Name is mandatory</div>
+        <div class="error" *ngIf="fname.dirty && fname.hasError('minlength')"> First Name is requires min 5 characters</div>
+        
+        <input type="text" name="lname" [(ngModel)]="user.lname" #lname=ngModel placeholder="lname" required>
+        
+        <input type="number" name="contact" [(ngModel)]="user.contact" #contact=ngModel placeholder="Contact Number" maxlength="10" pattern="[6789][0-9]{9}">
+        <div class="error" *ngIf="contact.dirty && contact.hasError('pattern')"> contact number should contain 10 digits & start with 6|7|8|9</div>
+        
+        <input type="{{passType}}" name="pwd" [(ngModel)]="user.pwd" #pwd=ngModel placeholder="pwd"> <span (click)="togglePass()">{{passLabel}}</span>
+
+        <button>Submit</button>
+
+    </form>
+
+    ##########feild states##########
+    valid :: {{fname.valid}}
+    invalid :: {{fname.invalid}}
+    dirty :: {{fname.dirty}}
+    pristine :: {{fname.pristine}}
+    touched :: {{fname.touched}}
+    untouched :: {{fname.untouched}}
+    required Error :: {{fname.hasError('required')}}
+    minlength Error:: {{fname.hasError('minlength')}}
+
+    ##########Form States##########
+    valid :: {{f.valid}}
+    invalid :: {{f.invalid}}
+    dirty :: {{f.dirty}}
+    pristine :: {{f.pristine}}
+    touched :: {{f.touched}}
+    untouched :: {{f.untouched}}
+    submitted:: {{f.submitted}}
+
+</pre>
