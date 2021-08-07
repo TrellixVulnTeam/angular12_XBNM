@@ -1,0 +1,24 @@
+<p>reactive-forms works!</p>
+<pre>
+    <form [formGroup]="regFormGroup" (submit)="reg()">
+        <input type="text" formControlName="fname" placeholder="fname">
+        <div *ngIf="regFormGroup.controls.fname.hasError('required')">this is required Fname</div>
+        <div *ngIf="fc.fname.hasError('minlength')">min 5 chars</div>
+        <div *ngIf="fc.fname.hasError('maxlength')">max 10 chars</div>
+
+        <input type="text" formControlName="lname" placeholder="lname">
+        
+        <input type="number" formControlName="age" placeholder="age">
+        <div *ngIf="fc.age.hasError('min')">min age is 18</div>
+        <div *ngIf="fc.age.hasError('max')">max age is 40</div>
+
+        <input type="email" formControlName="email" placeholder="email">
+        <div *ngIf="fc.email.invalid">please enter a valid email</div>
+        
+        <input type="number" formControlName="contact" placeholder="contact">
+        <div *ngIf="fc.contact.hasError('pattern')">please enter a valid phone number</div>
+        
+        <input type="date"  formControlName="dob" >
+        <button>Sign UP </button>
+    </form>
+</pre>
