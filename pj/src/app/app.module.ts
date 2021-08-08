@@ -16,6 +16,9 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { FormsComponent } from './forms/forms.component';
 import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ApisComponent } from './apis/apis.component';
+import { UsersService } from './users.service';
+import {HttpClientModule} from '@angular/common/http'
 /*
 Components -- page / block of a page
 Directives -- block
@@ -38,15 +41,17 @@ Modules -- configuration of all above
     LifeCycleComponent,
     FormsComponent,
     ObjFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    ApisComponent
   ],
   imports: [ // modules
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [], // services
+  providers: [UsersService], // services
   bootstrap: [AppComponent] //first component
 })
 export class AppModule { }
