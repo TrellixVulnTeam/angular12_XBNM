@@ -9,16 +9,21 @@
 </header>
 <nav>
     <ul>
-        <li><a routerLink="home">Home</a></li>
+        <li><a [routerLink]="['/']">Home</a></li>
         <li><a [routerLink]="['intro']">Intro</a></li>
         <li><a [routerLink]="['var']">Variables</a></li>
         <li><a [routerLink]="['dir']">Directives</a></li>
         <li><a [routerLink]="['pipes']">Pipes</a></li>
-        <li><a [routerLink]="['life-cycle']">Life Cycle</a></li>
+        <li><a [routerLink]="['life-cycle', '12', 'mahesh', 'p', '34']">Life Cycle 1</a></li>
+        <!-- <li><a [routerLink]="['life-cycle', '13', 'naresh', 'p', '14']">Life Cycle 2</a></li>
+        <li><a [routerLink]="['life-cycle', '14', 'suresh', 'p', '24']">Life Cycle 3</a></li>
+        <li><a [routerLink]="['life-cycle', '15', 'ramesh', 'p', '44']">Life Cycle 4</a></li>
+        <li><a [routerLink]="['life-cycle', '16', title, 'p', '54']">Life Cycle 5</a></li> -->
         <li><a [routerLink]="['forms']">forms</a></li>
         <li><a [routerLink]="['obj-forms']">Obj Forms</a></li>
         <li><a [routerLink]="['reactive-forms']">Reactive Forms</a></li>
         <li><a [routerLink]="['apis']">Api's</a></li>
+        <li><a [routerLink]="['mahesh']">Mahesh</a></li>
     </ul>
 </nav>
 <main>

@@ -1,4 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-life-cycle',
@@ -8,10 +9,14 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 export class LifeCycleComponent implements OnInit,DoCheck,AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
 
   fname:string = "";
-  constructor() { }
+  urlParams:any = {}
+  constructor(private route:ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log('ngOnInit')
+    console.log('ngOnInit');
+    this.route.params.subscribe((res)=>{
+      this.urlParams = res;
+    })
   }
   ngAfterContentInit(){
     console.log('ngAfterContentInit')

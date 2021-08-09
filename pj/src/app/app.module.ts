@@ -18,7 +18,8 @@ import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ApisComponent } from './apis/apis.component';
 import { UsersService } from './users.service';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component'
 /*
 Components -- page / block of a page
 Directives -- block
@@ -42,7 +43,8 @@ Modules -- configuration of all above
     FormsComponent,
     ObjFormsComponent,
     ReactiveFormsComponent,
-    ApisComponent
+    ApisComponent,
+    NotFoundComponent
   ],
   imports: [ // modules
     BrowserModule,
