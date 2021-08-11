@@ -20,6 +20,8 @@ export class VariablesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    var c = 'angular' + this.age + 'tech';
   }
 
 }
