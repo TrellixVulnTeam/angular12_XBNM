@@ -19,7 +19,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { ApisComponent } from './apis/apis.component';
 import { UsersService } from './users.service';
 import {HttpClientModule} from '@angular/common/http';
-import { NotFoundComponent } from './not-found/not-found.component'
+import { NotFoundComponent } from './not-found/not-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 /*
 Components -- page / block of a page
 Directives -- block
@@ -51,9 +52,11 @@ Modules -- configuration of all above
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [UsersService], // services
-  bootstrap: [AppComponent] //first component
+  bootstrap: [AppComponent], //first component
+  exports: [] // modules, components, directive,pies, services
 })
 export class AppModule { }
