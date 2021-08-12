@@ -1,7 +1,68 @@
 <p>directives works!</p>
+<p>
+{{fname}}
+{{fruits}}
+</p>
+
+<div *ngIf="fname == 'tech'"> this is if </div>
+<!-- if the condition doest satisfy we will remove the element from the DOM-->
+
+<div [hidden]="fname == 'tech'"> this is hidden </div>
+<!-- if the condition  satisfy we will add a `hidden` attribute to the element, so it will not show in the UI-->
 
 
-<div> this is if </div>
-<div> this is hidden </div>
-<div class="remo"> this is ng class </div>
-<div style="background-color: red;"> this is ng style </div>
+<div [ngSwitch]="fname">
+	<p *ngSwitchCase="'angular'"> this is angular</p>
+	<p *ngSwitchCase="'tech'"> this is tech</p>
+	<p *ngSwitchCase="'drys'"> this is drys</p>
+	<p *ngSwitchDefault> this is default</p>
+</div>
+
+<div *ngFor="let item of fruits"> {{item}} </div>
+<h1 *ngFor="let x of fruits"> {{x}} </h1>
+
+
+<ol >
+	<li *ngFor="let x of fruits"> {{x}}</li>
+</ol>
+
+<select>
+	<option *ngFor="let x of fruits"> {{x}}</option>
+</select>
+
+<table border="1">
+	<tr *ngFor="let x of fruits">
+		<td> {{x}}</td>
+	</tr>
+</table>
+
+<div [ngClass]="{'error': (fname=='err'),'success': (fname=='suc') }"> this is ng class </div>
+
+<div [ngStyle]="{'background-color': (fname=='err')?'red':'green'}"> this is ng style </div>
+
+
+
+<pre>
+
+<!-- 3 Types of directives
+
+Structural Directives
+*ngFor
+*ngIf
+
+Attribute Directives
+[hidden]
+[ngClass]
+[ngStyle]
+[ngSwitch]
+
+
+Custom Directives
+[mahesh]
+ -->
+
+
+
+
+
+</pre>

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
 
+  fname:string = 'suc';
+  fruits: string[] = ['kiwi', 'melon', 'berry'];
+
   constructor() { }
 
   ngOnInit(): void {
