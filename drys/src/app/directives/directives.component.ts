@@ -7,12 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DirectivesComponent implements OnInit {
 
-  fname:string = 'suc';
+  fname:string = 'mahesh';
   fruits: string[] = ['kiwi', 'melon', 'berry'];
 
+
+  counter:number = 0;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  callMe(){
+    console.log(this.counter);
+    this.counter++;
+  }
+
+  evnetCheck(event:any){
+    if(event.ctrlKey && event.keyCode == 67){
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }
