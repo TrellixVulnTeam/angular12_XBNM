@@ -1,0 +1,41 @@
+<div class="row d-flex justify-content-center">
+  <div class="col-md-3">
+    <input
+      class="form-control form-control-md"
+      type="text"
+      placeholder="Search"
+      [(ngModel)]="searchText"
+    />
+  </div>
+  <div class="col-md-3">
+    <button
+      type="submit"
+      class="btn btn-primary mb-3"
+      (click)="search()"
+      [disabled]="!dataLoaded"
+    >
+      <span *ngIf="dataLoaded">Search</span>
+      <span
+        *ngIf="!dataLoaded"
+        class="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      <span *ngIf="!dataLoaded" class="visually-hidden"> Loading...</span>
+    </button>
+  </div>
+</div>
+
+<div *ngIf="albumList.length">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let item of albumList">
+      <div class="card">
+        <img src="{{ item.img }}" class="card-img-top" alt="{{ item.title }}" />
+        <div class="card-body">
+          <h2 class="card-title ellipsis">{{ item.title }}</h2>
+          <a href="{{ item.link }}" class="btn btn-primary">View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

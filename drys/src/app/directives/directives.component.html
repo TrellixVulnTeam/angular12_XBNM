@@ -1,4 +1,6 @@
-
+<!-- ngModel can be used only on the form fields -->
+<input type="text" name="fname" [(ngModel)]="fname"> 
+<button (click)="checkFname()">click me</button>
 <div *ngIf="fname == 'tech'"> this is if </div>
 <!-- if the condition doest satisfy we will remove the element from the DOM-->
 
@@ -31,6 +33,7 @@
 	</tr>
 </table>
 
+<div class="errror">asdfasdf</div>
 <div [ngClass]="{'error': (fname=='err'),'success': (fname=='suc') }"> this is ng class </div>
 
 <div [ngStyle]="{'background-color': (fname=='err')?'red':'green'}"> this is ng style </div>
@@ -95,7 +98,7 @@ Attribute Directives
 [ngSwitch]
 
 
-Custom Directives
+Custom Directives**
 [mahesh]
  -->
 

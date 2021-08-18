@@ -9,9 +9,8 @@ export class DirectivesComponent implements OnInit {
 
   fname:string = 'mahesh';
   fruits: string[] = ['kiwi', 'melon', 'berry'];
-
-
   counter:number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -28,6 +27,11 @@ export class DirectivesComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  checkFname(){
+    this.fruits.push(this.fname);
+    this.fname = '';
   }
 
 }

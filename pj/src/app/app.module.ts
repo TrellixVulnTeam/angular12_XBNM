@@ -20,7 +20,9 @@ import { ApisComponent } from './apis/apis.component';
 import { UsersService } from './users.service';
 import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BasicComponent } from './basic/basic.component';
+import { InputComponent } from './input/input.component'
 /*
 Components -- page / block of a page
 Directives -- block
@@ -45,7 +47,9 @@ Modules -- configuration of all above
     ObjFormsComponent,
     ReactiveFormsComponent,
     ApisComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BasicComponent,
+    InputComponent
   ],
   imports: [ // modules
     BrowserModule,

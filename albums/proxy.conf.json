@@ -1,0 +1,18 @@
+{
+    "/deezer": {
+      "target": "http://api.deezer.com/",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/deezer": ""
+      }
+    },
+    "/itunes": {
+      "target": "https://itunes.apple.com/",
+      "secure": true,
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/itunes": ""
+      }
+    }
+  }
