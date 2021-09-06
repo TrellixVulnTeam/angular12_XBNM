@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DirectivesComponent } from './directives/directives.component';
 import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './intro/intro.component';
+import { PipesComponent } from './pipes/pipes.component';
 import { VariablesComponent } from './variables/variables.component';
 
 const routes: Routes = [
@@ -10,6 +11,7 @@ const routes: Routes = [
   {path:'intro', component: IntroComponent},
   {path:'varrrrrrrr', component: VariablesComponent},
   {path:'dir', component: DirectivesComponent},
+  {path:'pipes', component: PipesComponent},
 ];
 
 @NgModule({

@@ -7,9 +7,28 @@
 <app-basic></app-basic> -->
 
 <!-- <app-variables></app-variables> -->
-<app-inputsssss [asdf]="'hello'"></app-inputsssss>
+<!-- <app-inputsssss [asdf]="'hello'"></app-inputsssss>
 <app-inputsssss [asdf]="'hi'" [abc]="'second call abc'"></app-inputsssss>
 <app-inputsssss [asdf]="'how are you'" [xyz]="'thirdcall xyz'"></app-inputsssss>
 <app-inputsssss [cc]="'fourthcall cc'"></app-inputsssss>
 <app-inputsssss [type]="'primary'"></app-inputsssss>
-<app-inputsssss [type]="'secondary'"></app-inputsssss>
+<app-inputsssss [type]="'secondary'"></app-inputsssss> -->
+
+<div class="row">
+<div class="col-md-6">
+    <h2>Available Users List</h2> 
+  <app-users-list 
+  [usesList]="availableUsers"
+  (sendIndex)="availUser($event)"></app-users-list>
+</div>
+<div class="col-md-6">
+    <h2>Selected Users List</h2> 
+    <app-users-list
+    [usesList]="selectUsers"
+    (sendIndex)="selUser($event)"></app-users-list>
+  </div>
+  </div>
+
+  <div appHighliter>im a custom directive</div>
+  <div appHighlightEvent> ima a custom directive with event</div>
+  <div appHighlightEvent [color]="'tomato'"> ima a custom directive with event tomato</div>

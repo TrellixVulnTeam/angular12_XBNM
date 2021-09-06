@@ -1,9 +1,17 @@
-import { Injectable } from '@angular/core';
-import { forkJoin, Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-
+import { Injectable } from "@angular/core";
+import { forkJoin, Observable } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+export interface List {
+  title: string;
+  link: string;
+  img: string;
+};
+export interface Options {
+  value: string;
+  label: string;
+};
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class SearchService {
   constructor(private http: HttpClient) {}
@@ -13,18 +21,25 @@ export class SearchService {
     return this.http.get(url);
   }
   searchItunes(searchText: string) {
-    var url = '/itunes/search?term=' + searchText;
+    var url = "/itunes/search?term=" + searchText;
     return this.http.get(url);
   }
-  search(searchText: string) {
+  search(searchText: string, option:string) {
     return new Observable((observer: any) => {
-      let res1 = this.searchDeezer(searchText);
-      let res2 = this.searchItunes(searchText);
-      forkJoin([res1, res2]).subscribe(
-        ([deezer, itunes]: any) => {
-          let results: any = [];
-          if (deezer.playlists.data.length) {
-            deezer.playlists.data.forEach((item: any) => {
+      var ob = (option === 'itunes')? this.searchItunes(searchText) : this.searchDeezer(searchText);
+      ob.subscribe(
+        (res: any) => {
+          let results: List[] = [];
+          if (option === 'itunes' && res.results.length) {
+            res.results.forEach((item: any) => {
+              results.push({
+                title: item.trackName,
+                img: item.artworkUrl60,
+                link: item.trackViewUrl,
+              });
+            });
+          } else if (option === 'deezer' && res.playlists.data.length) {
+            res.playlists.data.forEach((item: any) => {
               results.push({
                 title: item.title,
                 img: item.picture_medium,
@@ -32,20 +47,11 @@ export class SearchService {
               });
             });
           }
-          if (itunes.results.length) {
-            itunes.results.forEach((item: any) => {
-              results.push({
-                title: item.trackName,
-                img: item.artworkUrl60,
-                link: item.trackViewUrl,
-              });
-            });
-          }
           observer.next(results);
           observer.complete();
         },
-        (err:any  ) => {
-          observer.error('asdf');
+        (err: any) => {
+          observer.error("asdf");
         }
       );
     });

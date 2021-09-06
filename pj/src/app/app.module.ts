@@ -22,7 +22,10 @@ import {HttpClientModule} from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BasicComponent } from './basic/basic.component';
-import { InputComponent } from './input/input.component'
+import { InputComponent } from './input/input.component';
+import { UsersListComponent } from './users-list/users-list.component';
+import { HighliterDirective } from './highliter.directive';
+import { HighlightEventDirective } from './highlight-event.directive'
 /*
 Components -- page / block of a page
 Directives -- block
@@ -49,7 +52,10 @@ Modules -- configuration of all above
     ApisComponent,
     NotFoundComponent,
     BasicComponent,
-    InputComponent
+    InputComponent,
+    UsersListComponent,
+    HighliterDirective,
+    HighlightEventDirective
   ],
   imports: [ // modules
     BrowserModule,
