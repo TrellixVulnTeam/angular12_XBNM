@@ -9,6 +9,8 @@ import { VariablesComponent } from './variables/variables.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { FormsModule } from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
+import { HexaPipe } from './hexa.pipe';
+import { ParamsPipe } from './params.pipe';
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -17,7 +19,9 @@ import { PipesComponent } from './pipes/pipes.component';
     IntroComponent,
     VariablesComponent,
     DirectivesComponent,
-    PipesComponent
+    PipesComponent,
+    HexaPipe,
+    ParamsPipe
   ],
   imports: [ //modules
     BrowserModule,
