@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
 import { HexaPipe } from './hexa.pipe';
 import { ParamsPipe } from './params.pipe';
+import { AsciiPipe } from './ascii.pipe';
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -21,7 +22,8 @@ import { ParamsPipe } from './params.pipe';
     DirectivesComponent,
     PipesComponent,
     HexaPipe,
-    ParamsPipe
+    ParamsPipe,
+    AsciiPipe
   ],
   imports: [ //modules
     BrowserModule,
