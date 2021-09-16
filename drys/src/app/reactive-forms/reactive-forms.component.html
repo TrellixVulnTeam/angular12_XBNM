@@ -1,0 +1,27 @@
+<p>reactive-forms works!</p>
+<pre>
+<form name="form" [formGroup]="regFormGroup" (submit)="reg()">
+    <input type="text" name="fname" formControlName="fname" placeholder="First Name">
+    <div style="color: red;" *ngIf="regFormGroup.controls.fname.dirty && regFormGroup.controls.fname.hasError('required')"> This feild is mandatory</div>
+    <div style="color: red;" *ngIf="regFormGroup.controls.fname.dirty && regFormGroup.controls.fname.hasError('minlength')"> Please enter min 5 chars</div>
+    <div style="color: red;" *ngIf="regFormGroup.controls.fname.dirty && regFormGroup.controls.fname.hasError('maxlength')"> Please enter max 10 chars</div>
+    
+    <input type="text" name="lname" formControlName="lname" placeholder="Last Name">
+
+    <input type="text" name="phone" formControlName="phone" placeholder="phone number" >
+
+    <div style="color: red;" *ngIf="regFormGroup.controls.phone.dirty && regFormGroup.controls.phone.hasError('pattern')"> Please enter a valid phone number</div>
+
+    <input type="number" name="age" formControlName="age" placeholder="Age" >
+    <div style="color: red;" *ngIf="regFormGroup.controls.phone.dirty && regFormGroup.controls.phone.hasError('min')"> Min age is 18</div>
+    <div style="color: red;" *ngIf="regFormGroup.controls.phone.dirty && regFormGroup.controls.phone.hasError('max')"> Max age is 40</div>
+
+    <input type="text" name="gender" formControlName="gender" placeholder="Gender" >
+    
+    
+    <button>submit</button>
+</form>
+
+
+
+</pre>

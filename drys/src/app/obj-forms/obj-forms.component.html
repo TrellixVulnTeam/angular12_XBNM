@@ -1,0 +1,43 @@
+<p>obj-forms works!</p>
+<p>forms works!</p>
+<pre>
+<form name="form" #f=ngForm (submit)="f.valid && login()">
+    <input type="text" name="fname" [(ngModel)]="user.fname" #fname=ngModel placeholder="First Name" required minlength="5">
+    <!-- <div style="color: red;" *ngIf="fname.touched && fname.invalid"> Please enter a valid name</div> -->
+    <!-- <div style="color: red;" *ngIf="fname.dirty && fname.invalid"> Please enter a valid name</div> -->
+    <!-- <div style="color: red;" *ngIf="f.submitted && fname.invalid"> Please enter a valid name</div> -->
+    <div style="color: red;" *ngIf="fname.dirty && fname.hasError('required')"> This feild is mandatory</div>
+    <div style="color: red;" *ngIf="fname.dirty && fname.hasError('minlength')"> Please enter min 5 chars</div>
+    
+    <input type="text" name="lname" [(ngModel)]="user.lname" #lname=ngModel placeholder="Last Name" required>
+
+    <input type="text" name="phone" [(ngModel)]="user.phone" #phone=ngModel placeholder="phone number" pattern="[6789][0-9]{9}">
+
+    <div style="color: red;" *ngIf="phone.dirty && phone.hasError('pattern')"> Please enter a valid phone number</div>
+    
+    
+    <button>submit</button>
+</form>
+
+##Form Feild States##
+- valid     {{fname.valid}}
+- invalid   {{fname.invalid}}
+- dirty     {{fname.dirty}}
+- pristine  {{fname.pristine}}
+- touched   {{fname.touched}}
+- untouched {{fname.untouched}}
+- required  {{fname.hasError('required')}}
+- minlength {{fname.hasError('minlength')}}
+
+
+##Form States##
+- valid     {{f.valid}}
+- invalid   {{f.invalid}}
+- dirty     {{f.dirty}}
+- pristine  {{f.pristine}}
+- touched   {{f.touched}}
+- untouched {{f.untouched}}
+- submitted {{f.submitted}}
+
+
+</pre>

@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { IntroComponent } from './intro/intro.component';
 import { VariablesComponent } from './variables/variables.component';
 import { DirectivesComponent } from './directives/directives.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipesComponent } from './pipes/pipes.component';
 import { HexaPipe } from './hexa.pipe';
 import { ParamsPipe } from './params.pipe';
 import { AsciiPipe } from './ascii.pipe';
 import { FormsComponent } from './forms/forms.component';
+import { ObjFormsComponent } from './obj-forms/obj-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -25,12 +27,15 @@ import { FormsComponent } from './forms/forms.component';
     HexaPipe,
     ParamsPipe,
     AsciiPipe,
-    FormsComponent
+    FormsComponent,
+    ObjFormsComponent,
+    ReactiveFormsComponent
   ],
   imports: [ //modules
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [], // services
   bootstrap: [AppComponent]

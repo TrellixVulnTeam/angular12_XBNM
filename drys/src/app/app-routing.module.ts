@@ -6,6 +6,8 @@ import { IntroComponent } from './intro/intro.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { VariablesComponent } from './variables/variables.component';
 import { FormsComponent } from './forms/forms.component';
+import { ObjFormsComponent } from './obj-forms/obj-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'intro', component: IntroComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path:'dir', component: DirectivesComponent},
   {path:'pipes', component: PipesComponent},
   {path:'forms', component: FormsComponent},
+  {path:'obj-forms', component: ObjFormsComponent},
+  {path:'reactive-forms', component: ReactiveFormsComponent},
 ];
 
 @NgModule({
