@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ReactiveFormsComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private r:Router) { }
 
   regFormGroup:FormGroup = this.fb.group({})
 
@@ -23,7 +24,15 @@ export class ReactiveFormsComponent implements OnInit {
     })
   }
 
-  reg(){
+  get fc(){
+    return this.regFormGroup.controls;
+  }
 
+  reg(){
+    if(this.regFormGroup.valid){
+      console.log(this.regFormGroup.value);
+      //callAPI -> goto some page
+      this.r.navigate(['/intro'])
+    }
 }
 }

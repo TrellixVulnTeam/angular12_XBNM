@@ -2,9 +2,9 @@
 <pre>
 <form name="form" [formGroup]="regFormGroup" (submit)="reg()">
     <input type="text" name="fname" formControlName="fname" placeholder="First Name">
-    <div style="color: red;" *ngIf="regFormGroup.controls.fname.dirty && regFormGroup.controls.fname.hasError('required')"> This feild is mandatory</div>
-    <div style="color: red;" *ngIf="regFormGroup.controls.fname.dirty && regFormGroup.controls.fname.hasError('minlength')"> Please enter min 5 chars</div>
-    <div style="color: red;" *ngIf="regFormGroup.controls.fname.dirty && regFormGroup.controls.fname.hasError('maxlength')"> Please enter max 10 chars</div>
+    <div style="color: red;" *ngIf="fc.fname.dirty && fc.fname.hasError('required')"> This feild is mandatory</div>
+    <div style="color: red;" *ngIf="fc.fname.dirty && fc.fname.hasError('minlength')"> Please enter min 5 chars</div>
+    <div style="color: red;" *ngIf="fc.fname.dirty && fc.fname.hasError('maxlength')"> Please enter max 10 charssssss</div>
     
     <input type="text" name="lname" formControlName="lname" placeholder="Last Name">
 
