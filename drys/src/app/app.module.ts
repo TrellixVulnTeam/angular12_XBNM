@@ -15,6 +15,7 @@ import { AsciiPipe } from './ascii.pipe';
 import { FormsComponent } from './forms/forms.component';
 import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -29,7 +30,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     AsciiPipe,
     FormsComponent,
     ObjFormsComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    LifeCycleComponent
   ],
   imports: [ //modules
     BrowserModule,

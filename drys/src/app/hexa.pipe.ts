@@ -5,6 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HexaPipe implements PipeTransform {
 
+  constructor(){}
+  
   transform(inp: number ): any {
     return inp.toString(16);
   }
