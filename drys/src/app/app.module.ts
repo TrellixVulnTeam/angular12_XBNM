@@ -16,6 +16,10 @@ import { FormsComponent } from './forms/forms.component';
 import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ApisComponent } from './apis/apis.component';
+
+import {UsersService} from './users.service'
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -31,15 +35,17 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
     FormsComponent,
     ObjFormsComponent,
     ReactiveFormsComponent,
-    LifeCycleComponent
+    LifeCycleComponent,
+    ApisComponent
   ],
   imports: [ //modules
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [], // services
+  //providers: [UsersService], // services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
