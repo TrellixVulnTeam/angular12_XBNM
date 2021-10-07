@@ -13,7 +13,7 @@ import { ApisComponent } from './apis/apis.component';
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
-  {path:'intro', component: IntroComponent},
+  {path:'intro/:id', component: IntroComponent},
   {path:'varrrrrrrr', component: VariablesComponent},
   {path:'dir', component: DirectivesComponent},
   {path:'pipes', component: PipesComponent},

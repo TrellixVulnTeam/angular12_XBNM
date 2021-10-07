@@ -19,6 +19,7 @@
             <p (click)="viewUser(user.id)" >View User</p>
             <p (click)="editUser(user.id)">Edit User</p>
             <p (click)="deleteUser(user.id)">Delete User</p>
+            <a [routerLink]="['/intro', user.id]">Edit user</a>
         </td>
     </tr>
 </table>

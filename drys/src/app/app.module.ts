@@ -19,7 +19,8 @@ import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApisComponent } from './apis/apis.component';
 
-import {UsersService} from './users.service'
+import {UsersService} from './users.service';
+import { TestComponent } from './test/test.component'
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -36,7 +37,8 @@ import {UsersService} from './users.service'
     ObjFormsComponent,
     ReactiveFormsComponent,
     LifeCycleComponent,
-    ApisComponent
+    ApisComponent,
+    TestComponent
   ],
   imports: [ //modules
     BrowserModule,
