@@ -20,7 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApisComponent } from './apis/apis.component';
 
 import {UsersService} from './users.service';
-import { TestComponent } from './test/test.component'
+import { TestComponent } from './test/test.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { DemoMaterialModule } from './material.module';
 
 @NgModule({
   declarations: [ // components, directives, pipes
@@ -38,14 +42,18 @@ import { TestComponent } from './test/test.component'
     ReactiveFormsComponent,
     LifeCycleComponent,
     ApisComponent,
-    TestComponent
+    TestComponent,
+    NotfoundComponent
   ],
   imports: [ //modules
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule,
+    BrowserAnimationsModule,
+    DemoMaterialModule
   ],
   //providers: [UsersService], // services
   bootstrap: [AppComponent]

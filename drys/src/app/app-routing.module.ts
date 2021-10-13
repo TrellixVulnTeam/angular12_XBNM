@@ -10,9 +10,10 @@ import { ObjFormsComponent } from './obj-forms/obj-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { LifeCycleComponent } from './life-cycle/life-cycle.component';
 import { ApisComponent } from './apis/apis.component';
+import { NotfoundComponent } from './notfound/notfound.component'
 
 const routes: Routes = [
-  {path:'home', component: HomeComponent},
+  {path:'', component: HomeComponent},
   {path:'intro/:id', component: IntroComponent},
   {path:'varrrrrrrr', component: VariablesComponent},
   {path:'dir', component: DirectivesComponent},
@@ -22,7 +23,10 @@ const routes: Routes = [
   {path:'reactive-forms', component: ReactiveFormsComponent},
   {path:'life', component: LifeCycleComponent},
   {path:'apis', component: ApisComponent},
+  {path:'**', component: NotfoundComponent},
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
